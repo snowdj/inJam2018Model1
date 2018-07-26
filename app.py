@@ -45,7 +45,7 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G135'
+    myHardCodePred = 'G137'
     import random
 
     foo = ['G1', 'G2', 'G3', 'G4', 'G5']
