@@ -18,3 +18,4 @@ Werkzeug==0.14.1
 joblib==0.12.1
 Flask-RESTful==0.3.6
 preprocessing==0.1.13
+requests==2.18.4

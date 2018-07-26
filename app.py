@@ -26,7 +26,6 @@ def make_predict():
     # pickle_model = 'pickle_model.pkl'
     # model = pickle.load(open(pickle_model, 'rb'))
 
-
     # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
     secondPickle = 'testPickle.pkl'
@@ -46,7 +45,6 @@ def make_predict():
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
     myHardCodePred = 'G137'
-    import random
 
     foo = ['G1', 'G2', 'G3', 'G4', 'G5']
     demo = random.choice(foo)
