@@ -4,6 +4,7 @@ import pickle
 import json
 from sklearn.externals import joblib
 import catboost
+import random
 
 
 app = Flask(__name__)
@@ -22,8 +23,8 @@ def make_predict():
     pickle_le = 'pickle_le.pkl'
     load_le = pickle.load(open(pickle_le, 'rb'))
 
-    pickle_model = 'pickle_model.pkl'
-    model = pickle.load(open(pickle_model, 'rb'))
+    # pickle_model = 'pickle_model.pkl'
+    # model = pickle.load(open(pickle_model, 'rb'))
 
 
     # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
@@ -44,8 +45,12 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G134'
-    return json.dumps({'hello': myHardCodePred})
+    myHardCodePred = 'G135'
+    import random
+
+    foo = ['G1', 'G2', 'G3', 'G4', 'G5']
+    demo = random.choice(foo)
+    return json.dumps({'Group': demo})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
     # return jsonify(yep = "Hello world!")
