@@ -10,8 +10,13 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     welcomeLabel = """
-    <h1>Hello from the Smart Team!</h1>
+    <h1>Hello from Smart Team!</h1>
+
+    <img src="http://loremflickr.com/600/400">
     """
+
+    
+
     return welcomeLabel
 
 
@@ -41,7 +46,7 @@ def make_predict():
     predGroup = encoder.inverse_transform(predIndex)
 
     ## print(predIndex, predGroup)
-    myHardCodePred = '144'
+    myHardCodePred = '145'
 
 
     ## return our prediction
