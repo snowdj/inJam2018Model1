@@ -4,16 +4,20 @@ import pickle
 import json
 
 myPickle = 'model.pkl'
-
 encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-	return "Xor Prediction!"
+def homepage():
+    welcomeLabel = """
+    <h1>Welcome!</h1>
+    """
+    return welcomeLabel
 
-@app.route('/model1', methods=['POST', 'GET'])
+
+
+@app.route('/model1', methods=['POST'])
 def make_predict():
 	
 	## all kinds of error checking should go here
