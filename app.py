@@ -20,6 +20,11 @@ def make_predict():
     
     pickle_le = 'pickle_le.pkl'
     load_le = pickle.load(open(pickle_le, 'rb'))
+
+    pickle_model = 'pickle_model.pkl'
+    model = pickle.load(open(pickle_model, 'rb'))
+
+
     # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
     secondPickle = 'testPickle.pkl'
@@ -38,7 +43,7 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G131'
+    myHardCodePred = 'G132'
     return json.dumps({'hello': myHardCodePred})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
