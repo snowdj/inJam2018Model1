@@ -2,10 +2,9 @@ import numpy as np
 from flask import Flask, abort, jsonify, request
 import pickle
 import json
-from sklearn.externals import joblib
-import catboost
+# from sklearn.externals import joblib
+# import catboost
 import random
-
 
 app = Flask(__name__)
 @app.route('/')
@@ -44,11 +43,11 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G137'
+    myHardCodePred = 'G138'
 
     foo = ['G1', 'G2', 'G3', 'G4', 'G5']
     demo = random.choice(foo)
-    return json.dumps({'Group': demo})
+    return json.dumps({'Group': G4})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
     # return jsonify(yep = "Hello world!")
