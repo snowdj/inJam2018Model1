@@ -29,7 +29,7 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G1000000'
+    myHardCodePred = 'G123'
     return json.dumps({'hello': myHardCodePred})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
