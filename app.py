@@ -17,7 +17,7 @@ def homepage():
 @app.route('/model1', methods=['POST'])
 def make_predict():
     myPickle = 'model.pkl'
-    encoder, modelCatBoost = pickle.load(open(myPickle))
+    encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     
     ##encoder, modelCatBoost = joblib.load('model.pkl')
@@ -34,7 +34,7 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G124'
+    myHardCodePred = 'G125'
     return json.dumps({'hello': myHardCodePred})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
