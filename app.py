@@ -3,9 +3,6 @@ from flask import Flask, abort, jsonify, request
 import pickle
 import json
 
-myPickle = 'model.pkl'
-encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,7 +15,9 @@ def homepage():
 
 # @app.route('/model1', methods=['POST'])
 # def make_predict():
-	
+	# myPickle = 'model.pkl'
+    # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+
 # 	## all kinds of error checking should go here
 # 	data = request.get_json(force=True)
 # 	## convert our json to a numpy array 
