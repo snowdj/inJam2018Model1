@@ -10,26 +10,23 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     welcomeLabel = """
-    <h1>Final Count Down!</h1>
+    <h1>Hello from the Smart Team!</h1>
     """
     return welcomeLabel
 
 
 @app.route('/model1', methods=['POST'])
 def make_predict():
-    myPickle = 'model.pkl'
     
-    pickle_le = 'pickle_le.pkl'
-    load_le = pickle.load(open(pickle_le, 'rb'))
+    # pickle_le = 'pickle_le.pkl'
+    # load_le = pickle.load(open(pickle_le, 'rb'))
 
     # pickle_model = 'pickle_model.pkl'
     # model = pickle.load(open(pickle_model, 'rb'))
 
-    # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+    myPickle = 'model.pkl'
+    encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
-    secondPickle = 'testPickle.pkl'
-    this = pickle.load(open(secondPickle, 'rb'))
-    # encoder, modelCatBoost = joblib.load('model.pkl')
     ## all kinds of error checking should go here
     ## convert our json to a numpy array  
     data = request.get_json(force=True)	
@@ -40,20 +37,17 @@ def make_predict():
     predict_request = np.array(predict_request)
     predict_reshape = np.array(predict_request).reshape(1, -1)
 
-    # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
-    # predGroup = encoder.inverse_transform(predIndex)
+    predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
+    predGroup = encoder.inverse_transform(predIndex)
+
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G143'
-    myHardCodePredTesting = 'G00000'
+    myHardCodePred = '144'
 
 
-    # foo = ['G1', 'G2', 'G3', 'G4', 'G5']
-    # demo = random.choice(foo)
-    return json.dumps({'Group': 'G4'})
     ## return our prediction
-    ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
+    return jsonify(attempt = myHardCodePred, predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
     # return jsonify(yep = "Hello world!")
-    #return jsonify(myGuess = myHardCodePred)
+    # return jsonify(myGuess = myHardCodePred)
 
 if __name__ == '__main__':
     app.run(debug = True)
