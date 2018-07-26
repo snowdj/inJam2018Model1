@@ -18,7 +18,7 @@ def homepage():
 def make_predict():
     myPickle = 'model.pkl'
     secondPickle = 'testPickle.pkl'
-    #encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+    encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     this = pickle.load(open(secondPickle, 'rb'))
     # encoder, modelCatBoost = joblib.load('model.pkl')
     ## all kinds of error checking should go here
@@ -34,7 +34,7 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G129'
+    myHardCodePred = 'G130'
     return json.dumps({'hello': myHardCodePred})
     ## return our prediction
     ##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
