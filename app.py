@@ -15,7 +15,7 @@ def homepage():
 @app.route('/model1', methods=['POST'])
 def make_predict():
     myPickle = 'model.pkl'
-    # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+    encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     ## all kinds of error checking should go here
     ## convert our json to a numpy array  
     data = request.get_json(force=True)	
