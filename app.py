@@ -3,8 +3,8 @@ from flask import Flask, abort, jsonify, request
 import pickle
 import json
 
-# myPickle = 'model.pkl'
-# encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+myPickle = 'model.pkl'
+encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
 app = Flask(__name__)
 
