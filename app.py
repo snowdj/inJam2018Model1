@@ -46,8 +46,7 @@ def make_predict():
     predGroup = encoder.inverse_transform(predIndex)
 
     ## print(predIndex, predGroup)
-    myHardCodePred = '145'
-
+    myHardCodePred = '146'
 
     ## return our prediction
     return jsonify(attempt = myHardCodePred, predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
