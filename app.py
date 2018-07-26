@@ -14,8 +14,8 @@ def homepage():
 
 @app.route('/model1', methods=['POST'])
 def make_predict():
-    myPickle = 'model.pkl'
-    encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
+    # myPickle = 'model.pkl'
+    # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     ## all kinds of error checking should go here
     ## convert our json to a numpy array  
     data = request.get_json(force=True)	
@@ -26,8 +26,8 @@ def make_predict():
     predict_request = np.array(predict_request)
     predict_reshape = np.array(predict_request).reshape(1, -1)
 
-    predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
-    predGroup = encoder.inverse_transform(predIndex)
+    # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
+    # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
     myHardCodePred = 'G1000000'
     return json.dumps({'hello': myHardCodePred})
