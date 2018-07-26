@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
 	return "Xor Prediction!"
 
-@app.route('/model1', methods=['POST'])
+@app.route('/model1', methods=['POST', 'GET'])
 def make_predict():
 	
 	## all kinds of error checking should go here
@@ -38,5 +38,4 @@ def make_predict():
 
 if __name__ == '__main__':
     # app.run(port = 9000, debug = True, use_reloader=True)
-	print("Yes")
-	app.run()
+	app.run(debug = True)
