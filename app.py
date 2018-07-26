@@ -9,12 +9,16 @@ encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/')
+def index():
+	return "Xor Prediction!"
+
+@app.route('/model1', methods=['POST'])
 def make_predict():
 	
 	## all kinds of error checking should go here
 	data = request.get_json(force=True)
-	## convert our json to a numpy array
+	## convert our json to a numpy array 
 	predict_request = [data['CnaeSession'], 
                        data['Uf'], 
                        data['FundationDate'], 
@@ -26,7 +30,7 @@ def make_predict():
 	predGroup = encoder.inverse_transform(predIndex)
 	## print(predIndex, predGroup)
 	myHardCodePred = 'G1000000'
-	return json.dumps({'testing': myHardCodePred})
+	return json.dumps({'hello': myHardCodePred})
 	## return our prediction
 	##return jsonify(predIndex = predIndex.tolist(), predGroup = predGroup.tolist())
 	# return jsonify(yep = "Hello world!")
