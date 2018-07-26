@@ -17,6 +17,7 @@ def homepage():
 @app.route('/model1', methods=['POST'])
 def make_predict():
     myPickle = 'model.pkl'
+    encoder, modelCatBoost = pickle.load(open(myPickle))
     # encoder, modelCatBoost = pickle.load(open(myPickle, 'rb'))
     
     ##encoder, modelCatBoost = joblib.load('model.pkl')
