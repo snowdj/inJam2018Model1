@@ -43,8 +43,8 @@ def make_predict():
     # predIndex = modelCatBoost.predict(predict_reshape).astype('int').flatten()
     # predGroup = encoder.inverse_transform(predIndex)
     ## print(predIndex, predGroup)
-    myHardCodePred = 'G141'
-
+    myHardCodePred = 'G142'
+    myHardCodePredTesting = 'G00000'
     # foo = ['G1', 'G2', 'G3', 'G4', 'G5']
     # demo = random.choice(foo)
     return json.dumps({'Group': 'G4'})
